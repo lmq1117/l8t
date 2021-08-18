@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Home\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProductController;
+//use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/admin/products",'ProductController@products');
+//Route::get("/admin/products",'ProductController@products');
+
+Route::get('hello',function (){
+    return 'hello laravel!';
+});
+
+Route::get('home/user/{user}',[HomeController::class,'user']);
